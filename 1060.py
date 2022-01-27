@@ -12,11 +12,11 @@ def missingElement(nums, k):
     l = 0 
     r = len(nums)-1 
 
-    while l<r: 
+    while l+1<r:
         mid = (l+r)//2
 
         number_gap = nums[mid] - nums[l] + 1
-        missing = number_gap - len(nums[:mid+1])
+        missing = number_gap - len(nums[l:mid+1])
 
         if missing < k: 
             l= mid 
@@ -24,6 +24,10 @@ def missingElement(nums, k):
         else: 
             r = mid
 
-    return nums[l]
+    return nums[l] + k 
+
+
+if __name__ == "__main__":
+    print(missingElement([4,7,9,10], 1))
 
 
