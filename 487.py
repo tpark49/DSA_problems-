@@ -1,9 +1,9 @@
 def findMaxConsecutiveOnes(nums):
-    start, end = 0, 0 
+    start = 0
     max_zeros = 1
     num_zeros = 0
 
-    for i in nums:
+    for i, end in enumerate(nums):
 
         if i == 0 : 
             num_zeros +=1 
