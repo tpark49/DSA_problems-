@@ -14,10 +14,10 @@ def findPeakGrid(mat):
                 largest_i = i 
         
         left, right = False, False
-        if start>0 and mat[largest_i][mid]<mat[largest_i][mid-1]:
+        if mid>start and mat[largest_i][mid]<mat[largest_i][mid-1]:
             left = True 
 
-        if end < len(mat[0])-1 and mat[largest_i][mid]<mat[largest_i][mid+1]:
+        if mid < end and mat[largest_i][mid]<mat[largest_i][mid+1]:
             right = True
 
         if not left and not right: 
@@ -33,9 +33,12 @@ def findPeakGrid(mat):
 
 
 if __name__ == "__main__":
-    print(findPeakGrid([
-        [10,50,40,30,20],
-        [1,500,2,3,4]]))
+    print(findPeakGrid(
+        [
+            [10,50,40,30,60],
+            [1,500,2,3,4]
+            
+            ]))
 
 
 
