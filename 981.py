@@ -34,6 +34,8 @@ class TimeMap2(object):
             self.dicitonary[key].append([timestamp, value])
 
     def get(self, key, timestamp):
+        if key not in self.dictionary: 
+            return "" 
         arr = self.dicitonary[key]
         l = 0 
         r = len(arr)-1
@@ -51,10 +53,6 @@ class TimeMap2(object):
         else: 
             return arr[r][1]
         
-
-
-
-
 if __name__ == "__main__":
     mytime = TimeMap2()
     mytime.set("foo", "bar", 1)
