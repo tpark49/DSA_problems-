@@ -1,0 +1,3 @@
+def singleNonDuplicates(nums):
+
+    pass
